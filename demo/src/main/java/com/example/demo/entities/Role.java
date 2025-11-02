@@ -1,13 +1,17 @@
 package com.example.demo.entities;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
-@Table(name = "app_role",
-uniqueConstraints = @UniqueConstraint(
-        name = "uk_role_name", columnNames = "role_name"
-))
+@Table(
+        name = "app_role",
+        uniqueConstraints = @UniqueConstraint(name = "uk_role_name", columnNames = "name")
+)
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,6 +24,6 @@ public class Role {
     private Long id;
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "role_name", length = 32, nullable = false)
-    private RoleName roleName;
+    @Column(name = "name", length = 32, nullable = false)
+    private RoleName name;
 }
