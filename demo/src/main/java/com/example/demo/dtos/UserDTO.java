@@ -1,13 +1,11 @@
 package com.example.demo.dtos;
 
-import com.example.demo.entities.Role;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.UUID;
-
 
 @Getter
 @Setter
@@ -18,7 +16,5 @@ public class UserDTO {
     private UUID id;
     private String username;
     private String email;
-
-
-    private Role role;
+    private String role;
 }
